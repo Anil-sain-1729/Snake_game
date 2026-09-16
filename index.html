@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Snake - 25 Levels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <h1>GRID SNAKE</h1>
+        <p>Reach the red target without hitting the walls.</p>
+      </div>
+      <div class="stats">
+        <span>Level <b id="levelText">1</b>/200</span>
+        <span>Moves <b id="movesText">0</b></span>
+      </div>
+    </header>
+
+    <section class="game-card">
+      <div id="board" class="board" aria-label="Snake game board"></div>
+
+      <div class="controls">
+        <button class="control up" data-dir="up">▲</button>
+        <div>
+          <button class="control" data-dir="left">◀</button>
+          <button class="control" data-dir="down">▼</button>
+          <button class="control" data-dir="right">▶</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="restartBtn">↻ Restart</button>
+        <button id="levelsBtn">☷ Levels</button>
+      </div>
+    </section>
+
+    <section id="levelPanel" class="level-panel hidden">
+      <div class="panel-head">
+        <h2>Select Level</h2>
+        <button id="closeLevels">✕</button>
+      </div>
+      <div id="levelGrid" class="level-grid"></div>
+    </section>
+
+    <div id="message" class="message hidden">
+      <div class="message-box">
+        <h2 id="messageTitle">Level Complete!</h2>
+        <p id="messageText"></p>
+        <div class="message-actions">
+          <button id="nextBtn">Next Level →</button>
+          <button id="messageRestart">Restart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="levels.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
